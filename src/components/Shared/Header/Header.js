@@ -1,9 +1,35 @@
 import React from 'react';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import useAuth from '../../../hooks/useAuth';
+import './Header.css'
 
 const Header = () => {
+    const { user, logOut } = useAuth();
     return (
         <div>
-            <h2>Header</h2>
+            <>
+                <Navbar className="header" bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg" >
+                    <Container>
+                        <Navbar.Brand href="#home">Leumeah General Hospital</Navbar.Brand>
+                        <Navbar.Toggle />
+                        <Navbar.Collapse className="justify-content-end">
+                            <Nav>
+                                <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
+                                <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>
+                                {/* <Nav.Link as={HashLink} to="/home#experts">Experts</Nav.Link> */}
+                                {user?.email ?
+                                    <Button onClick={logOut} variant="light">Logout</Button> :
+                                    <Nav.Link as={Link} to="/login">Login</Nav.Link>}
+                                <Navbar.Text>
+                                    <a href="#login">{user?.displayName}</a>
+                                </Navbar.Text>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+            </>
         </div>
     );
 };

@@ -60,12 +60,16 @@ const useFirebase = () => {
     const handleLogin = e => {
         setIsLoading(true)
         e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
+        return signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 // Signed in 
                 const user = result.user;
                 console.log(user)
+                setUserName();
+
                 setError(' ');
+
+
                 setIsLoading(false);
 
             })
@@ -222,7 +226,8 @@ const useFirebase = () => {
         handleEmailChange,
         handlePasswordChange,
         error, setError,
-        handleLogin
+        handleLogin,
+        setUserName
     }
 }
 

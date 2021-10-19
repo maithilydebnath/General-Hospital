@@ -1,6 +1,6 @@
 # Leumeah General Hospital
 
-Please click on the link to check our website - 
+Please click on the link to check our website - https://general-hospital-4890a.web.app
 
 ## Our Services
 
@@ -9,6 +9,6 @@ Please click on the link to check our website -
 3. Please see us for the Dibetics, cancer, during pregnancy, birthing and during the early stages of the postnatal period for families.
 4. We also provide service for Neurology and Gastroenterology.
 5. During COVID time, we maintain all the COVID related procedure.
-6. All experience doctors are here and also we have pathology here. 
+6. All Doctors are experienced and also we have pathology here. 
 
 

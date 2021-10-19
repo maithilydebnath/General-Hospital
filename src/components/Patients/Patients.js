@@ -1,6 +1,6 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
-import banner from '../../images/young-doctor-supporting-his-patient.jpg';
+import banner from '../../images/patient.jpg';
 import './Patients.css'
 
 const Patients = () => {

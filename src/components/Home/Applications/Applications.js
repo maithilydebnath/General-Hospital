@@ -1,24 +1,23 @@
 import React from 'react';
-import { FaBeer } from 'react-icons/fa';
+import { Col, Container, Row } from 'react-bootstrap';
+import { FaBookMedical, FaClinicMedical } from 'react-icons/fa';
+import { MdPeople } from 'react-icons/md';
+import './Applications.css'
 
 const Applications = () => {
     return (
         <div>
             <h2 className="mt-4 mb-4">Our eApplications</h2>
-            <div className="card mb-3" >
-                <div className="row g-0">
-                    <div className="col-md-4">
-                        <img src="..." className="img-fluid rounded-start" alt="..." />
-                    </div>
-                    <div className="col-md-8">
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Container className="pt-4 pb-4">
+
+                <Row>
+                    <Col className="border p-4 bg-color m-2"><span className="pe-2"> <FaBookMedical /> </span> <b>Personal Health Record</b></Col>
+                    <Col className="border p-4 bg-color m-2" ><span className="pe-2"> <FaClinicMedical /> </span> <b>E-Admission</b></Col>
+                    <Col className="border p-4 bg-color m-2"><span className="pe-2"> <MdPeople /> </span> <b>eReffarals</b></Col>
+                </Row>
+            </Container>
+
+
         </div>
     );
 };

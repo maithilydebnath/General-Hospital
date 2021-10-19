@@ -3,8 +3,10 @@ import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
-    const { signInUsingGoogle, handleEmailChange,
-        handlePasswordChange, handleLogin } = useAuth();
+    const { User, signInUsingGoogle, handleEmailChange,
+        handlePasswordChange, handleLogin, setUserName, error,
+
+        setError } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/serviceDetails';
@@ -18,6 +20,7 @@ const Login = () => {
             })
 
     }
+
     return (
         <div className="mx-5">
 
@@ -37,6 +40,7 @@ const Login = () => {
                             <input onBlur={handlePasswordChange} type="password" className="form-control" id="inputPassword3" required />
                         </div>
                     </div>
+                    <div className="row mb-3 text-danger"> {error}</div>
                     <button type="submit" className="btn btn-warning m-2">Login</button>
 
                 </form>

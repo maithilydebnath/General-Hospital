@@ -13,6 +13,7 @@ import Register from './components/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import ServiceDetails from './components/Home/ServiceDetails/ServiceDetails';
+import Patients from './components/Patients/Patients';
 
 function App() {
   return (
@@ -31,13 +32,16 @@ function App() {
             {/* <PrivateRoute path="/placeOrder">
             <PlaceOrder></PlaceOrder>
           </PrivateRoute> */}
+            <Route path="/patients">
+              <Patients></Patients>
+            </Route>
             <Route path="/login">
               <Login></Login>
             </Route>
             <Route path="/register">
               <Register></Register>
             </Route>
-            <PrivateRoute path="/booking/:serviceId">
+            <PrivateRoute path="/serviceDetails/:serviceId">
               <ServiceDetails></ServiceDetails>
             </PrivateRoute>
             <Route path="*">

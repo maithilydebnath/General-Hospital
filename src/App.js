@@ -15,6 +15,7 @@ import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import ServiceDetails from './components/Home/ServiceDetails/ServiceDetails';
 import Patients from './components/Patients/Patients';
 import Blogs from './components/Blogs/Blogs';
+import Teams from './components/Teams/Teams';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <PrivateRoute path="/blogs">
               <Blogs></Blogs>
+            </PrivateRoute>
+            <PrivateRoute path="/teams">
+              <Teams></Teams>
             </PrivateRoute>
             <Route path="/patients">
               <Patients></Patients>

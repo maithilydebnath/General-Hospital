@@ -21,15 +21,6 @@ const Header = () => {
                                 <Nav.Link as={Link} to="/patients">Patients</Nav.Link>
                                 <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
 
-                                {/* {
-                                    user.email ?
-                                        <button onClick={logOut}> Log out</button>
-                                        :
-                                        <NavLink to="/login">Login</NavLink>
-                                }
-
-                                {/* <NavLink to="/register">Register</NavLink> */}
-
 
                                 {user?.email ?
 

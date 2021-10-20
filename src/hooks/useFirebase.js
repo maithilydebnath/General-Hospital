@@ -42,6 +42,7 @@ const useFirebase = () => {
                 // Signed in 
                 const user = result.user;
                 console.log(user)
+                // setUser();
                 setUserName();
                 setError(' ');
                 setIsLoading(false);
@@ -66,9 +67,7 @@ const useFirebase = () => {
                 const user = result.user;
                 console.log(user)
                 setUserName();
-
                 setError(' ');
-
 
                 setIsLoading(false);
 
@@ -79,23 +78,7 @@ const useFirebase = () => {
 
             });
     }
-    // const loginProcess = (email, password) => {
-    //     // setIsLoading(true);
-    //     signInWithEmailAndPassword(auth, email, password)
-    //         .then(result => {
-    //             // Signed in 
-    //             const user = result.user;
-    //             console.log(user)
-    //             setError(' ');
-    //             // setIsLoading(false);
 
-    //         })
-    //         .catch((error) => {
-
-    //             setError(error.message);
-
-    //         });
-    // }
     const setUserName = () => {
         updateProfile(auth.currentUser, {
             displayName: name
@@ -105,81 +88,7 @@ const useFirebase = () => {
 
         });
     }
-    // const createNewUser = (email, password) => {
-    //     // setIsLoading(true);
-    //     createUserWithEmailAndPassword(auth, email, password)
-    //         .then(result => {
-    //             // Signed in 
-    //             const user = result.user;
-    //             console.log(user)
-    //             setError(' ');
-    //             // setIsLoading(false);
 
-
-    //         })
-
-
-    //         .catch((error) => {
-
-    //             setError(error.message);
-
-    //         });
-
-    // }
-
-    // const handleRegistration = e => {
-    //     e.preventDefault();
-    //     console.log(email, password);
-    //     if (password.length < 6) {
-
-    //         setError('Password should be at least 6 characters');
-    //         return;
-    //     }
-    //     if (!/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/.test(password)) {
-    //         setError('minimum 8 characters length, 2 letters in Upper Case, 1 Special Character,2 numerals (0-9) and 3 letters in Lower Case')
-    //         return;
-    //     }
-
-    //     isLogin ? loginProcess(email, password) : createNewUser(email, password)
-    // }
-    // const loginProcess = (email, password) => {
-    //     // setIsLoading(true);
-    //     signInWithEmailAndPassword(auth, email, password)
-    //         .then(result => {
-    //             // Signed in 
-    //             const user = result.user;
-    //             console.log(user)
-    //             setError(' ');
-    //             // setIsLoading(false);
-
-    //         })
-    //         .catch((error) => {
-
-    //             setError(error.message);
-
-    //         });
-    // }
-    // const createNewUser = (email, password) => {
-    //     // setIsLoading(true);
-    //     createUserWithEmailAndPassword(auth, email, password)
-    //         .then(result => {
-    //             // Signed in 
-    //             const user = result.user;
-    //             console.log(user)
-    //             setError(' ');
-    //             // setIsLoading(false);
-
-
-    //         })
-
-
-    //         .catch((error) => {
-
-    //             setError(error.message);
-
-    //         });
-
-    // }
     const googleProvider = new GoogleAuthProvider();
 
     const signInUsingGoogle = () => {
@@ -194,7 +103,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    // observe user state change
+
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, user => {
             if (user) {
